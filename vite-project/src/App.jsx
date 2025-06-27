@@ -16,12 +16,16 @@ const App = () => {
   {
     path: '/',
     element: <Home foodData={foodData}/>
+  },
+  {
+    path: '/search',
+    
   }
 
 ]);
 
   return (
-    <div className='bg-green-100'>
+    <div >
       <Navbar foodData={foodData} setFoodData={setFoodData}/>
       <RouterProvider router={router}/>
       
