@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter,createBrowserRouter,RouterProvider } from 'react-router-dom' 
 
 import Home from './pages/Home';
+import SearchPage from './pages/SearchPage';
 
 const App = () => {
 
@@ -15,10 +16,11 @@ const App = () => {
 
   {
     path: '/',
-    element: <Home foodData={foodData}/>
+    element: <Home foodData={foodData} setFoodData={setFoodData}/>
   },
   {
     path: '/search',
+    element: <SearchPage foodData={foodData} setFoodData={setFoodData}/>
     
   }
 
@@ -26,7 +28,7 @@ const App = () => {
 
   return (
     <div >
-      <Navbar foodData={foodData} setFoodData={setFoodData}/>
+      
       <RouterProvider router={router}/>
       
       
