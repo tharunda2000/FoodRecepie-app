@@ -7,6 +7,7 @@ import { BrowserRouter,createBrowserRouter,RouterProvider } from 'react-router-d
 
 import Home from './pages/Home';
 import SearchPage from './pages/SearchPage';
+import ViewRecepiePage from './pages/ViewRecepiePage';
 
 const App = () => {
 
@@ -21,6 +22,11 @@ const App = () => {
   {
     path: '/search',
     element: <SearchPage foodData={foodData} setFoodData={setFoodData}/>
+    
+  },
+  {
+    path: '/recepie/:id',
+    element: <ViewRecepiePage foodData={foodData} setFoodData={setFoodData} />
     
   }
 

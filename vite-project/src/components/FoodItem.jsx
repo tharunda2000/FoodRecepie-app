@@ -1,6 +1,20 @@
 import React, { useState } from 'react'
 
+import { useNavigate } from 'react-router-dom';
+
 const FoodItem = ({foodItem,key}) => {
+
+  
+  const navigate = useNavigate();
+  
+
+  const viewRecepie = () =>{
+
+    navigate(`/recepie/${foodItem.id}`);
+    console.log(foodItem.id)
+    
+
+  }
 
   const [isFavourite,setFavourite] = useState(false);
   return (
@@ -12,7 +26,7 @@ const FoodItem = ({foodItem,key}) => {
         <h1 className=' m-3 ms-5 lg:hidden'>{foodItem.title.split(" ").slice(0, 3).join(" ")}</h1>
 
         <div>
-          <button className=' mx-3 mt-5 bg-green-400 p-2 hover:bg-green-500 cursor-pointer rounded-full w-30'>Show Recepie</button>
+          <button className=' mx-3 mt-5 bg-green-400 p-2 hover:bg-green-500 cursor-pointer rounded-full w-30 ' onClick={viewRecepie}>Show Recepie</button>
           <i className={!isFavourite?"ri-heart-fill text-2xl text-gray-400 cursor-pointer":"ri-heart-fill text-2xl text-red-400 cursor-pointer"} onClick={()=>setFavourite(!isFavourite)}></i>
         </div>
 
